@@ -73,3 +73,16 @@ function renderYAxes(newYScale, yAxis) {
 
     return yAxis;
 }
+
+
+// functions used for updating circles group with a transition to
+// new circles for x
+function renderXCircles(circlesGroup, newXScale, chosenXAxis) {
+
+    circlesGroup.transition()
+        .duration(1000)
+        .attr("cx", d => newXScale(d[chosenXAxis]))
+        .attr("dx", d => newXScale(d[chosenXAxis]));
+
+    return circlesGroup;
+}
