@@ -20,3 +20,10 @@ var svg = d3
     .attr("width", svgWidth)
     .attr("height", svgHeight + 50);
 
+// Append an SVG group
+var chartGroup = svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+// Initial Params
+var chosenXAxis = "poverty";
+var chosenYAxis = "healthcare";
